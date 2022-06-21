@@ -8,15 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9DC17AC62860FC05007046E7 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC17AC52860FC05007046E7 /* Car.swift */; };
-		9DC17AC92860FFC2007046E7 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC17AC82860FFC2007046E7 /* CarViewModel.swift */; };
+		9DC17AC92860FFC2007046E7 /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC17AC82860FFC2007046E7 /* CarsViewModel.swift */; };
 		9DC17ACD2861005B007046E7 /* CarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC17ACC2861005B007046E7 /* CarsView.swift */; };
 		F4D7C06428608EA6005D5650 /* CodeChallengeSIXTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C06328608EA6005D5650 /* CodeChallengeSIXTApp.swift */; };
 		F4D7C06628608EA6005D5650 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C06528608EA6005D5650 /* ContentView.swift */; };
 		F4D7C06828608EA7005D5650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D7C06728608EA7005D5650 /* Assets.xcassets */; };
 		F4D7C06B28608EA7005D5650 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D7C06A28608EA7005D5650 /* Preview Assets.xcassets */; };
-		F4D7C0722861AA11005D5650 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C0712861AA11005D5650 /* NetworkService.swift */; };
 		F4D7C07A2861ABD9005D5650 /* CodeChallengeSIXTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */; };
-		F4D7C0812861AC06005D5650 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C0802861AC06005D5650 /* NetworkServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,17 +29,15 @@
 
 /* Begin PBXFileReference section */
 		9DC17AC52860FC05007046E7 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		9DC17AC82860FFC2007046E7 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
+		9DC17AC82860FFC2007046E7 /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
 		9DC17ACC2861005B007046E7 /* CarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsView.swift; sourceTree = "<group>"; };
 		F4D7C06028608EA6005D5650 /* CodeChallengeSIXT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeChallengeSIXT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D7C06328608EA6005D5650 /* CodeChallengeSIXTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeChallengeSIXTApp.swift; sourceTree = "<group>"; };
 		F4D7C06528608EA6005D5650 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4D7C06728608EA7005D5650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4D7C06A28608EA7005D5650 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F4D7C0712861AA11005D5650 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F4D7C0772861ABD9005D5650 /* CodeChallengeSIXTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeChallengeSIXTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeChallengeSIXTTests.swift; sourceTree = "<group>"; };
-		F4D7C0802861AC06005D5650 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +79,8 @@
 		F4D7C06228608EA6005D5650 /* CodeChallengeSIXT */ = {
 			isa = PBXGroup;
 			children = (
-				F4D7C0712861AA11005D5650 /* NetworkService.swift */,
 				9DC17AC52860FC05007046E7 /* Car.swift */,
-				9DC17AC82860FFC2007046E7 /* CarViewModel.swift */,
+				9DC17AC82860FFC2007046E7 /* CarsViewModel.swift */,
 				9DC17ACC2861005B007046E7 /* CarsView.swift */,
 				F4D7C06328608EA6005D5650 /* CodeChallengeSIXTApp.swift */,
 				F4D7C06528608EA6005D5650 /* ContentView.swift */,
@@ -107,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */,
-				F4D7C0802861AC06005D5650 /* NetworkServiceTests.swift */,
 			);
 			path = CodeChallengeSIXTTests;
 			sourceTree = "<group>";
@@ -216,8 +210,7 @@
 				9DC17ACD2861005B007046E7 /* CarsView.swift in Sources */,
 				F4D7C06428608EA6005D5650 /* CodeChallengeSIXTApp.swift in Sources */,
 				9DC17AC62860FC05007046E7 /* Car.swift in Sources */,
-				F4D7C0722861AA11005D5650 /* NetworkService.swift in Sources */,
-				9DC17AC92860FFC2007046E7 /* CarViewModel.swift in Sources */,
+				9DC17AC92860FFC2007046E7 /* CarsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +218,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D7C0812861AC06005D5650 /* NetworkServiceTests.swift in Sources */,
 				F4D7C07A2861ABD9005D5650 /* CodeChallengeSIXTTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
