@@ -11,7 +11,10 @@ import SwiftUI
 struct CodeChallengeSIXTApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                ContentView()
+            }
         }
     }
 }
