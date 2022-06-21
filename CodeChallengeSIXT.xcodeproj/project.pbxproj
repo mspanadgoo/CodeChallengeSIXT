@@ -14,7 +14,20 @@
 		F4D7C06628608EA6005D5650 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C06528608EA6005D5650 /* ContentView.swift */; };
 		F4D7C06828608EA7005D5650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D7C06728608EA7005D5650 /* Assets.xcassets */; };
 		F4D7C06B28608EA7005D5650 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D7C06A28608EA7005D5650 /* Preview Assets.xcassets */; };
+		F4D7C0722861AA11005D5650 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C0712861AA11005D5650 /* NetworkService.swift */; };
+		F4D7C07A2861ABD9005D5650 /* CodeChallengeSIXTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */; };
+		F4D7C0812861AC06005D5650 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C0802861AC06005D5650 /* NetworkServiceTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4D7C07B2861ABD9005D5650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4D7C05828608EA6005D5650 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4D7C05F28608EA6005D5650;
+			remoteInfo = CodeChallengeSIXT;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9DC17AC52860FC05007046E7 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
@@ -25,10 +38,21 @@
 		F4D7C06528608EA6005D5650 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4D7C06728608EA7005D5650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4D7C06A28608EA7005D5650 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F4D7C0712861AA11005D5650 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F4D7C0772861ABD9005D5650 /* CodeChallengeSIXTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeChallengeSIXTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeChallengeSIXTTests.swift; sourceTree = "<group>"; };
+		F4D7C0802861AC06005D5650 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F4D7C05D28608EA6005D5650 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4D7C0742861ABD9005D5650 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				F4D7C06228608EA6005D5650 /* CodeChallengeSIXT */,
+				F4D7C0782861ABD9005D5650 /* CodeChallengeSIXTTests */,
 				F4D7C06128608EA6005D5650 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				F4D7C06028608EA6005D5650 /* CodeChallengeSIXT.app */,
+				F4D7C0772861ABD9005D5650 /* CodeChallengeSIXTTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,6 +83,7 @@
 		F4D7C06228608EA6005D5650 /* CodeChallengeSIXT */ = {
 			isa = PBXGroup;
 			children = (
+				F4D7C0712861AA11005D5650 /* NetworkService.swift */,
 				9DC17AC52860FC05007046E7 /* Car.swift */,
 				9DC17AC82860FFC2007046E7 /* CarViewModel.swift */,
 				9DC17ACC2861005B007046E7 /* CarsView.swift */,
@@ -74,6 +101,15 @@
 				F4D7C06A28608EA7005D5650 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F4D7C0782861ABD9005D5650 /* CodeChallengeSIXTTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */,
+				F4D7C0802861AC06005D5650 /* NetworkServiceTests.swift */,
+			);
+			path = CodeChallengeSIXTTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +132,24 @@
 			productReference = F4D7C06028608EA6005D5650 /* CodeChallengeSIXT.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F4D7C0762861ABD9005D5650 /* CodeChallengeSIXTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4D7C07D2861ABD9005D5650 /* Build configuration list for PBXNativeTarget "CodeChallengeSIXTTests" */;
+			buildPhases = (
+				F4D7C0732861ABD9005D5650 /* Sources */,
+				F4D7C0742861ABD9005D5650 /* Frameworks */,
+				F4D7C0752861ABD9005D5650 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4D7C07C2861ABD9005D5650 /* PBXTargetDependency */,
+			);
+			name = CodeChallengeSIXTTests;
+			productName = CodeChallengeSIXTTests;
+			productReference = F4D7C0772861ABD9005D5650 /* CodeChallengeSIXTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +162,10 @@
 				TargetAttributes = {
 					F4D7C05F28608EA6005D5650 = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					F4D7C0762861ABD9005D5650 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = F4D7C05F28608EA6005D5650;
 					};
 				};
 			};
@@ -125,6 +183,7 @@
 			projectRoot = "";
 			targets = (
 				F4D7C05F28608EA6005D5650 /* CodeChallengeSIXT */,
+				F4D7C0762861ABD9005D5650 /* CodeChallengeSIXTTests */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +198,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4D7C0752861ABD9005D5650 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -150,11 +216,29 @@
 				9DC17ACD2861005B007046E7 /* CarsView.swift in Sources */,
 				F4D7C06428608EA6005D5650 /* CodeChallengeSIXTApp.swift in Sources */,
 				9DC17AC62860FC05007046E7 /* Car.swift in Sources */,
+				F4D7C0722861AA11005D5650 /* NetworkService.swift in Sources */,
 				9DC17AC92860FFC2007046E7 /* CarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4D7C0732861ABD9005D5650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4D7C0812861AC06005D5650 /* NetworkServiceTests.swift in Sources */,
+				F4D7C07A2861ABD9005D5650 /* CodeChallengeSIXTTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4D7C07C2861ABD9005D5650 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4D7C05F28608EA6005D5650 /* CodeChallengeSIXT */;
+			targetProxy = F4D7C07B2861ABD9005D5650 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F4D7C06C28608EA7005D5650 /* Debug */ = {
@@ -329,6 +413,42 @@
 			};
 			name = Release;
 		};
+		F4D7C07E2861ABD9005D5650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KXXKG35M4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mspanadgoo.CodeChallengeSIXTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeChallengeSIXT.app/CodeChallengeSIXT";
+			};
+			name = Debug;
+		};
+		F4D7C07F2861ABD9005D5650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KXXKG35M4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mspanadgoo.CodeChallengeSIXTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeChallengeSIXT.app/CodeChallengeSIXT";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -346,6 +466,15 @@
 			buildConfigurations = (
 				F4D7C06F28608EA7005D5650 /* Debug */,
 				F4D7C07028608EA7005D5650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4D7C07D2861ABD9005D5650 /* Build configuration list for PBXNativeTarget "CodeChallengeSIXTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4D7C07E2861ABD9005D5650 /* Debug */,
+				F4D7C07F2861ABD9005D5650 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

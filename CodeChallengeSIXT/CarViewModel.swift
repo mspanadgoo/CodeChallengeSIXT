@@ -10,36 +10,27 @@ import SwiftUI
 class CarViewModel {
     
     @Published var cars: [Car] = []
+    let fetchCarsURL = "https://cdn.sixt.io/codingtask/cars"
+    var networkService: NetworkService!
     
+    init() {
+        networkService = NetworkService()
+    }
     
-
-}
-
-class NetworkService {
-    let urlString = "https://cdn.sixt.io/codingtask/cars"
-    
-    func fetchCars(completion: @escaping (Result<[Car], Error>) -> Void) {
-        guard let url = URL(string: urlString) else {
-            completion(.failure(CarFetchError.badURL))
-            return
+    func fetchCars() {
+        networkService.request(urlString: fetchCarsURL) { result in
+            switch result {
+            case .success(let data):
+                let cars = getCarsFromData(data: data)
+            case .failure(let error):
+                break
+            }
         }
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else {
-                completion(.failure(CarFetchError.failedToFetchCars))
-                return
-            }
-            guard let cars = try? JSONDecoder().decode([Car].self, from: data) else {
-                completion(.failure(CarFetchError.failedToFetchCars))
-                return
-            }
-            
-            completion(.success(cars))
-        }.resume()
+    }
+    
+    func getCarsFromData(data: Data) -> [Car]? {
+        guard let cars = try? JSONDecoder().decode([Car].self, from: data) else { return nil }
+        return cars
     }
 }
 
-enum CarFetchError: Error {
-    case badURL
-    case failedToFetchCars
-}
