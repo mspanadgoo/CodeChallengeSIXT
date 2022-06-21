@@ -5,21 +5,29 @@
 //  Created by Mohammad Sadegh Panadgoo on 3/30/1401 AP.
 //
 
-struct Car: Decodable {
-    var id: String // "WMWSW31030T222518",
-    var modelIdentifier: String // "mini",
-    var modelName: String // "MINI",
-    var name: String // "Vanessa",
-    var make: String // "BMW",
-    var group: String // "MINI",
-    var color: String // "midnight_black",
-    var series: String // "MINI",
-    var fuelType: String // "D",
-    var fuelLevel: Double // 0.7,
-    var transmission: String // "M",
-    var licensePlate: String // "M-VO0259",
-    var latitude: Double // 48.134557,
-    var longitude: Double // 11.576921,
-    var innerCleanliness: String // "REGULAR",
-    var carImageUrl: String // "https://cdn.sixt.io/codingtask/images/mini.png"
+import CoreLocation
+
+struct Car: Decodable, Identifiable {
+    var id: String
+    var modelIdentifier: String
+    var modelName: String
+    var name: String
+    var make: String
+    var group: String
+    var color: String
+    var series: String
+    var fuelType: String
+    var fuelLevel: Double
+    var transmission: String
+    var licensePlate: String
+    var latitude: Double
+    var longitude: Double
+    var innerCleanliness: String
+    var carImageUrl: String
+}
+
+extension Car {
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }

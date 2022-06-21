@@ -12,18 +12,16 @@ struct CodeChallengeSIXTApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                
-                CarsView()
-                    .tabItem {
-                        Label("Car List", systemImage: "list.bullet")
-                    }
-                
-                ContentView()
+
+                CarsOnMapView()
                     .tabItem {
                         Label("Map", systemImage: "mappin")
                     }
-                
 
+                CarListView()
+                    .tabItem {
+                        Label("Car List", systemImage: "list.bullet")
+                    }
             }
         }
     }
