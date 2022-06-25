@@ -48,7 +48,7 @@ struct RemoteImage: View {
         }
     }
 
-    init(url: String, failure: Image = Image(systemName: "multiply.circle")) {
+    init(url: String, failure: Image = Image("DefaultCarImage")) {
         _loader = StateObject(wrappedValue: Loader(url: url))
         self.failure = failure
     }

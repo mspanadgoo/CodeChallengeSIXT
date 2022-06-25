@@ -15,20 +15,23 @@ struct CarsOnMapView: View {
     
     
     var body: some View {
-        Map(
-            coordinateRegion: $region,
-            interactionModes: MapInteractionModes.all,
-            showsUserLocation: true,
-            annotationItems: carsViewModel.cars,
-            annotationContent: { location in
-                MapAnnotation(
-                   coordinate: location.coordinate,
-                   content: {
-                      Image(systemName: "car.fill").foregroundColor(.red)
-                   }
-                )
-            }
-        )        
+        NavigationView {
+            Map(
+                coordinateRegion: $region,
+                interactionModes: MapInteractionModes.all,
+                showsUserLocation: true,
+                annotationItems: carsViewModel.cars,
+                annotationContent: { location in
+                    MapAnnotation(
+                        coordinate: location.coordinate,
+                        content: {
+                            Image(systemName: "car.fill").foregroundColor(.red)
+                        }
+                    )
+                }
+            )
+            .navigationBarTitle("Map", displayMode: .inline)
+        }
         .onAppear {
             carsViewModel.fetchCars()
         }

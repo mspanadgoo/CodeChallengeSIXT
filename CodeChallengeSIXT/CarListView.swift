@@ -13,30 +13,16 @@ struct CarListView: View {
     var body: some View {
         NavigationView {
             List(carsViewModel.cars) { car in
-                VStack(spacing: 0.8) {
-                    Text(car.name)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                        .background(Color.white)
-                    
-                    ZStack {
-                        Color.white
-                        RemoteImage(url: car.carImageUrl)
-                    }
-                    
-                    HStack {
-                        Text(car.name)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                    }
-                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                    .background(.white)
-                }
-                .frame(height: 300)
-                .background(Color.clear)
-                .cornerRadius(8)
-                .shadow(radius: 1)
+                CarView(car: car)
+                    .overlay(NavigationLink(destination: CarDetailView(car: car)) {
+                        EmptyView()
+                    }.opacity(0))
+                    .listRowInsets(EdgeInsets(top: 8, leading: 1, bottom: 8, trailing: 1))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+
             }
+            .navigationBarTitle("Car List", displayMode: .inline)
             .onAppear {
                 carsViewModel.fetchCars()
             }
