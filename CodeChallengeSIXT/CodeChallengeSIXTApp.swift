@@ -18,7 +18,7 @@ struct CodeChallengeSIXTApp: App {
                 switch viewModel.state {
                 case.ready:
                     TabView {
-                        CarsOnMapView(cars: viewModel.cars)
+                        CarsMapView(cars: viewModel.cars)
                             .tabItem {
                                 Label(viewModel.mapTabTitle, systemImage: "mappin")
                             }

@@ -25,7 +25,7 @@ struct CarView: View {
             HStack {
                 Text(car.modelName)
                 Spacer()
-                Text("More Detail")
+                Text("More Details")
                 Image(systemName: "chevron.right")
             }
             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

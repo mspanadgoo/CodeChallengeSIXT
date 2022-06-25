@@ -12,7 +12,7 @@ class CarsViewModel: ObservableObject {
     @Published var state: CarDataProviderState = .loading
     @Published var cars: [Car] = []
     
-    let mapTabTitle = "Map"
+    let mapTabTitle = "Map View"
     let listTabTitle = "Car List"
     
     private var carDataProvider: CarDataProvider

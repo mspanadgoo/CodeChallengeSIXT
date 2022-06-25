@@ -23,6 +23,6 @@ struct CarDetailsView: View {
             Text("Transmission: \(viewModel.car.transmission)")
             Text("License Plate: \(viewModel.car.licensePlate)")
         }
-        .navigationTitle(viewModel.car.name)
+        .navigationBarTitle(viewModel.car.name, displayMode: .inline)
     }
 }
