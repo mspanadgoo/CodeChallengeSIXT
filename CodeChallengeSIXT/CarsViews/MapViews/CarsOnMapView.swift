@@ -10,7 +10,6 @@ import MapKit
 import CoreLocation
 
 struct CarsOnMapView: View {
-    @ObservedObject var carsViewModel = CarsViewModel()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.114988, longitude: 11.598359), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     
@@ -31,9 +30,6 @@ struct CarsOnMapView: View {
                 }
             )
             .navigationBarTitle("Map", displayMode: .inline)
-        }
-        .onAppear {
-            carsViewModel.fetchCars()
         }
     }
 }
