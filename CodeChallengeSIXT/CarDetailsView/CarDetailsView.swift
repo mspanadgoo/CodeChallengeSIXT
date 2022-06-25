@@ -12,7 +12,7 @@ struct CarDetailsView: View {
     
     var body: some View {
         List {
-            RemoteImage(url: viewModel.car.carImageUrl)
+            RemoteImage(url: viewModel.car.carImageUrl, failure: Image("DefaultCarImage"))
                 .frame(height: 250)
             Text("Model Name: \(viewModel.car.modelName)")
             Text("Make: \(viewModel.car.make)")

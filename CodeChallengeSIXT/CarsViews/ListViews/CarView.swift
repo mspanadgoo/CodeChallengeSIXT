@@ -19,7 +19,7 @@ struct CarView: View {
             
             ZStack {
                 Color.white
-                RemoteImage(url: car.carImageUrl)
+                RemoteImage(url: car.carImageUrl, failure: Image("DefaultCarImage"))
             }
             
             HStack {
