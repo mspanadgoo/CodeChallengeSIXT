@@ -8,8 +8,30 @@
 import SwiftUI
 
 class CarsViewModel: ObservableObject {
-    private var task: AnyCancellable?
     
+    @Published var state: CarDataProviderState = .loading
     @Published var cars: [Car] = []
     
+    let mapTabTitle = "Map"
+    let listTabTitle = "Car List"
+    
+    private var carDataProvider: CarDataProvider
+    
+    init(carDataProvider: CarDataProvider) {
+        self.carDataProvider = carDataProvider
+        self.carDataProvider.delegate = self
+    }
+    
+    func fetchCars() {
+        carDataProvider.fetchCars()
+    }
+}
+
+extension CarsViewModel: CarDataProviderDelegate {
+    func carDataProviderStateChanged(state: CarDataProviderState) {
+        self.state = state
+        if case .ready = state {
+            cars = carDataProvider.items
+        }
+    }
 }

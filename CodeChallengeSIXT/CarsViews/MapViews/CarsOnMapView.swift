@@ -10,6 +10,8 @@ import MapKit
 import CoreLocation
 
 struct CarsOnMapView: View {
+    let cars: [Car]
+    
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.114988, longitude: 11.598359), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     
@@ -19,7 +21,7 @@ struct CarsOnMapView: View {
                 coordinateRegion: $region,
                 interactionModes: MapInteractionModes.all,
                 showsUserLocation: true,
-                annotationItems: carsViewModel.cars,
+                annotationItems: cars,
                 annotationContent: { location in
                     MapAnnotation(
                         coordinate: location.coordinate,

@@ -9,19 +9,35 @@ import SwiftUI
 
 @main
 struct CodeChallengeSIXTApp: App {
+    
+    @ObservedObject var viewModel = CarsViewModel(carDataProvider: CarDataProviderImp(carServices: CarServicesImp()))
+    
     var body: some Scene {
         WindowGroup {
-            TabView {
+            ZStack {
+                switch viewModel.state {
+                case.ready:
+                    TabView {
+                        CarsOnMapView(cars: viewModel.cars)
+                            .tabItem {
+                                Label(viewModel.mapTabTitle, systemImage: "mappin")
+                            }
 
-                CarsOnMapView()
-                    .tabItem {
-                        Label("Map", systemImage: "mappin")
+                        CarListView(cars: viewModel.cars)
+                            .tabItem {
+                                Label(viewModel.listTabTitle, systemImage: "list.bullet")
+                            }
                     }
-
-                CarListView()
-                    .tabItem {
-                        Label("Car List", systemImage: "list.bullet")
-                    }
+                case .loading:
+                    ProgressView()
+                case .error(let error):
+                    Text(error.localizedDescription)
+                }
+            }
+            .onAppear {
+                if viewModel.cars.isEmpty {
+                    viewModel.fetchCars()
+                }
             }
         }
     }

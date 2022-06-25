@@ -12,7 +12,7 @@ enum CarDataProviderState {
 }
 
 protocol CarDataProviderDelegate: AnyObject {
-    func carDataProviderDelegate(state: CarDataProviderState)
+    func carDataProviderStateChanged(state: CarDataProviderState)
 }
 
 protocol CarDataProvider {
@@ -27,7 +27,7 @@ class CarDataProviderImp: CarDataProvider {
     private (set) var items: [Car] = []
     private (set) var state: CarDataProviderState = .ready {
         didSet {
-            delegate?.carDataProviderDelegate(state: state)
+            delegate?.carDataProviderStateChanged(state: state)
         }
     }
     

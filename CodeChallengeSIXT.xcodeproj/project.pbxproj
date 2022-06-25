@@ -20,7 +20,6 @@
 		F4D7C06628608EA6005D5650 /* CarsOnMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C06528608EA6005D5650 /* CarsOnMapView.swift */; };
 		F4D7C06828608EA7005D5650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D7C06728608EA7005D5650 /* Assets.xcassets */; };
 		F4D7C06B28608EA7005D5650 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D7C06A28608EA7005D5650 /* Preview Assets.xcassets */; };
-		F4D7C07A2861ABD9005D5650 /* CodeChallengeSIXTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 		F4D7C06728608EA7005D5650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4D7C06A28608EA7005D5650 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4D7C0772861ABD9005D5650 /* CodeChallengeSIXTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeChallengeSIXTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeChallengeSIXTTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,13 +76,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		9D34B22D2867A7BA00876498 /* NetworkLayer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkLayer;
-			sourceTree = "<group>";
-		};
 		9D34B22E2867A84E00876498 /* CarsViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +99,8 @@
 		9D34B2302867A88C00876498 /* ListViews */ = {
 			isa = PBXGroup;
 			children = (
-				9D9D17162866BB4B00B7D96A /* CarView.swift */,
 				9DC17ACC2861005B007046E7 /* CarListView.swift */,
+				9D9D17162866BB4B00B7D96A /* CarView.swift */,
 			);
 			path = ListViews;
 			sourceTree = "<group>";
@@ -126,7 +117,6 @@
 		F4D7C05728608EA6005D5650 = {
 			isa = PBXGroup;
 			children = (
-				9D34B22D2867A7BA00876498 /* NetworkLayer */,
 				9D34B22C2867A6FF00876498 /* Model */,
 				F4D7C06228608EA6005D5650 /* CodeChallengeSIXT */,
 				F4D7C0782861ABD9005D5650 /* CodeChallengeSIXTTests */,
@@ -167,7 +157,6 @@
 		F4D7C0782861ABD9005D5650 /* CodeChallengeSIXTTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4D7C0792861ABD9005D5650 /* CodeChallengeSIXTTests.swift */,
 			);
 			path = CodeChallengeSIXTTests;
 			sourceTree = "<group>";
@@ -290,7 +279,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D7C07A2861ABD9005D5650 /* CodeChallengeSIXTTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

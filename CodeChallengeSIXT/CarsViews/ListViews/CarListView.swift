@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct CarListView: View {
-
+    let cars: [Car]
+    
     var body: some View {
         NavigationView {
-            List(carsViewModel.cars) { car in
+            List(cars) { car in
                 CarView(car: car)
                     .overlay(NavigationLink(destination: CarDetailsView(viewModel: CarDetailsViewModel(car: car))) {
                         EmptyView()
