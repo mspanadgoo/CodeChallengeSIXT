@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CarDetailsView: View {
+    
     var viewModel: CarDetailsViewModel
     
     var body: some View {

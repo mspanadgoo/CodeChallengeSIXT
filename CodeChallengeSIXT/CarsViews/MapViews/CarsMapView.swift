@@ -10,6 +10,7 @@ import MapKit
 import CoreLocation
 
 struct CarsMapView: View {
+    
     let cars: [Car]
     
     @State var showDetailView: Bool = false
@@ -50,6 +51,7 @@ struct CarsMapView: View {
                 })
                 .navigationBarTitle("Map", displayMode: .inline)
         }
+        .navigationViewStyle(.stack)
     }
 }
 

@@ -37,6 +37,7 @@ protocol CarDataProvider {
 }
 
 class CarDataProviderImp: CarDataProvider {
+    
     private (set) var items: [Car] = []
     private (set) var state: CarDataProviderState = .ready {
         didSet {

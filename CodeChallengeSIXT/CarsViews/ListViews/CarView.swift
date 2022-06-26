@@ -8,31 +8,32 @@
 import SwiftUI
 
 struct CarView: View {
-    var car: Car
+    @Environment(\.colorScheme) var colorScheme
+
+    var viewModel: CarViewModel
     
     var body: some View {
-        VStack(spacing: 1) {
-            Text(car.name)
-                .frame(maxWidth: .infinity, alignment: .leading)
+        VStack {
+            Text(viewModel.name)
+                .font(.title)
                 .padding()
-                .background(Color.white)
             
-            ZStack {
-                Color.white
-                RemoteImage(url: car.carImageUrl, failure: Image("DefaultCarImage"))
-            }
+            Divider()
+            
+            RemoteImage(url: viewModel.carImageUrl, failure: Image("DefaultCarImage"))
+                .frame(height: 250)
+            
+            Divider()
             
             HStack {
-                Text(car.modelName)
+                Text(viewModel.modelName)
                 Spacer()
                 Text("More Details")
                 Image(systemName: "chevron.right")
             }
-            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            .background(.white)
+            .padding()
         }
-        .frame(height: 350)
-        .background(Color.clear)
+        .background(colorScheme == .dark ? .gray : .white)
         .cornerRadius(8)
         .shadow(radius: 1)
     }
