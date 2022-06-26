@@ -5,7 +5,20 @@
 //  Created by Mohammad Sadegh Panadgoo on 4/5/1401 AP.
 //
 
-enum CarDataProviderState {
+import Foundation
+
+enum CarDataProviderState: Equatable {
+    static func == (lhs: CarDataProviderState, rhs: CarDataProviderState) -> Bool {
+        switch (lhs, rhs) {
+        case (.ready, .ready): return true
+        case (.loading, .loading): return true
+        case let (.error(error1 as NSError), .error(error2 as NSError)):
+            return error1 == error2
+        default:
+            return false
+        }
+    }
+    
     case ready
     case loading
     case error(Error)

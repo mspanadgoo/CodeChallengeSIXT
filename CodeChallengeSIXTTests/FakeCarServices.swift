@@ -9,9 +9,7 @@ import Foundation
 @testable import CodeChallengeSIXT
 
 class FakeCarServices: CarServices {
-    
     var fetchCarItems_result: Result<[Car], CarServicesError> = .failure(CarServicesError.generalError)
-    
     func fetchCarItems(completion: @escaping (Result<[Car], CarServicesError>) -> Void) {
         completion(fetchCarItems_result)
     }

@@ -30,12 +30,17 @@ enum CarServicesError: Error {
 
 class CarServicesImp: CarServices {
     
-    var cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
+    private let urlSession: URLSession
+    
+    init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
 
     func fetchCarItems(completion: @escaping (Result<[Car], CarServicesError>) -> Void) {
         guard let url = URL(string: APP_API.baseURL + APP_API.CarEndpoints.cars) else { return }
         
-        URLSession.shared.dataTaskPublisher(for: url)
+        urlSession.dataTaskPublisher(for: url)
             .print()
             .map {$0.data}
             .decode(type: [Car].self, decoder: JSONDecoder())

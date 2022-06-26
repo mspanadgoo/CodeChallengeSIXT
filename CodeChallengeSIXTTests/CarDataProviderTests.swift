@@ -9,36 +9,72 @@ import XCTest
 @testable import CodeChallengeSIXT
 
 class CarDataProviderTests: XCTestCase {
+    
+    private var carServices: FakeCarServices!
+    private var sut: CarDataProvider!
+    private var delegate: FakeCarDataProviderDelegate!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        carServices = FakeCarServices()
+        sut = CarDataProviderImp(carServices: carServices)
+        delegate = FakeCarDataProviderDelegate()
+        sut.delegate = delegate
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        carServices = nil
+        sut = nil
+        delegate = nil
     }
 
     func test_fetchCarItems_success() {
-        let carServices = FakeCarServices()
         carServices.fetchCarItems_result = .success(generateFakeCars(count: 1))
         
-        let sut = FakeCarDataProvider(carServices: carServices)
+        let didLoadExpectation = expectation(description: "cars loaded")
+        didLoadExpectation.expectedFulfillmentCount = 2
+        var previousState: CarDataProviderState?
+        
+        delegate.onStateChanged = { newState in
+            if previousState == .loading {
+                XCTAssertEqual(newState, .ready)
+            } else {
+                XCTAssertEqual(newState, .loading)
+            }
+            previousState = newState
+            didLoadExpectation.fulfill()
+        }
         
         sut.fetchCars()
+        wait(for: [didLoadExpectation], timeout: 1)
         
-        XCTAssertEqual(sut.items.count, 1)
         let firstCar = sut.items.first!
+        XCTAssertEqual(sut.items.count, 1)
         XCTAssertEqual(firstCar.id, "1")
         XCTAssertEqual(firstCar.modelIdentifier, "modelIdentifier test 1")
     }
     
     func test_fetchCarItems_failure() {
-        let carServices = FakeCarServices()
         carServices.fetchCarItems_result = .failure(.generalError)
         
-        let sut = FakeCarDataProvider(carServices: carServices)
+        let didLoadExpectation = expectation(description: "cars loaded")
+        didLoadExpectation.expectedFulfillmentCount = 2
+        var previousState: CarDataProviderState?
+        
+        delegate.onStateChanged = { newState in
+            if previousState == .loading {
+                XCTAssertEqual(newState, .error(CarServicesError.generalError))
+            } else {
+                XCTAssertEqual(newState, .loading)
+            }
+            previousState = newState
+            didLoadExpectation.fulfill()
+        }
         
         sut.fetchCars()
+        wait(for: [didLoadExpectation], timeout: 1)
+
         XCTAssertEqual(sut.items.count, 0)
     }
 }
