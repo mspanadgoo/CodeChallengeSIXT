@@ -20,7 +20,6 @@ struct CarListView: View {
                     .listRowInsets(EdgeInsets(top: 8, leading: 1, bottom: 8, trailing: 1))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
-
             }
             .navigationBarTitle("Car List", displayMode: .inline)
         }

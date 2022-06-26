@@ -12,17 +12,17 @@ struct CarDetailsView: View {
     
     var body: some View {
         List {
-            RemoteImage(url: viewModel.car.carImageUrl, failure: Image("DefaultCarImage"))
+            RemoteImage(url: viewModel.carImageUrl, failure: Image("DefaultCarImage"))
                 .frame(height: 250)
-            Text("Model Name: \(viewModel.car.modelName)")
-            Text("Make: \(viewModel.car.make)")
-            Text("Group: \(viewModel.car.group)")
-            Text("Color: \(viewModel.car.color)")
-            Text("Fuel Type: \(viewModel.car.fuelType)")
-            Text("Fuel Level: \(viewModel.car.fuelLevel)")
-            Text("Transmission: \(viewModel.car.transmission)")
-            Text("License Plate: \(viewModel.car.licensePlate)")
+            Text("Model Name: \(viewModel.modelName)")
+            Text("Make: \(viewModel.make)")
+            Text("Group: \(viewModel.group)")
+            Text("Color: \(viewModel.color)")
+            Text("Fuel Type: \(viewModel.fuelType)")
+            Text("Fuel Level: \(viewModel.fuelLevel)")
+            Text("Transmission: \(viewModel.transmission)")
+            Text("License Plate: \(viewModel.licensePlate)")
         }
-        .navigationBarTitle(viewModel.car.name, displayMode: .inline)
+        .navigationBarTitle(viewModel.name, displayMode: .inline)
     }
 }
